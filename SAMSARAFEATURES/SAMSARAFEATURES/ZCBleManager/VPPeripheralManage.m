@@ -12,7 +12,6 @@
 #import "LocalNotiFile.h"
 @interface VPPeripheralManage ()
 
-
 @end
 
 @implementation VPPeripheralManage
@@ -116,7 +115,9 @@ static VPPeripheralManage *peripheralManage = nil;
         NSDictionary *dict = [openModel changeOpenDict];
         [[DBStoreManager shareStoreManager]putObject:dict DeviceAddress:self.peripheralModel.deviceAddress withTime:openModel.saveTime intoTable:OpenBox_table withDataVession:@"0"];
         if (tbyte[1] == 0x01) {
-            [LocalNotiFile registImmediatelyNoticeWithContent:[NSString stringWithFormat:@"Samsara suitcase opened: %@",openModel.showTime]];
+            if (self.peripheralModel.openBoxType) {
+                [LocalNotiFile registImmediatelyNoticeWithContent:[NSString stringWithFormat:@"Samsara suitcase opened: %@",openModel.showTime]];
+            }
         }else if (tbyte[1] == 0x02) {
             [[NSNotificationCenter defaultCenter]postNotificationName:@"SABOXOPEN" object:nil];
         }

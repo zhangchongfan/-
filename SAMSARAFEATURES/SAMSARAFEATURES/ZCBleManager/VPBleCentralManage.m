@@ -56,11 +56,10 @@ static VPBleCentralManage *bleCentralManage = nil;
     self.peripheralManage.peripheralModel = peripheralModel;
 }
 
-- (void)startReadRSSI {
-    if (!self.isConnected) {
-        return;
+- (void)startReadRSSI {//连接后延迟3秒读取RSSI
+    if (self.isConnected && self.canReadRSSI) {
+        [self.peripheralModel.peripheral readRSSI];
     }
-    [self.peripheralModel.peripheral readRSSI];
 }
 
 //开始扫描并且返回扫描到的设备
@@ -204,6 +203,10 @@ static VPBleCentralManage *bleCentralManage = nil;
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error{
     if ([VPBleHelper searchCharacteristicsWithService:service]) {//发现了服务才算正式连接成功
         self.isConnected = YES;//只有找到服务特征才算连接成功
+        self.canReadRSSI = NO;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.canReadRSSI = YES;
+        });
         if (self.connectBlock) {
             self.connectBlock(BleConnectSuccess);
         }

@@ -21,6 +21,7 @@
 		5950AD351FAD7187006DE87C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5950AD331FAD7186006DE87C /* MapViewController.m */; };
 		5950AD381FAD71AE006DE87C /* VPLocationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5950AD361FAD71AE006DE87C /* VPLocationConverter.m */; };
 		5950AD3B1FAD71BB006DE87C /* VPAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5950AD3A1FAD71BB006DE87C /* VPAnnotation.m */; };
+		5962F686207F8C9300E615D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5962F685207F8C9300E615D0 /* InfoPlist.strings */; };
 		596493A91F6EBFE700C0A1D4 /* TPBGTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 596493A81F6EBFE700C0A1D4 /* TPBGTask.m */; };
 		596493AD1F6EC23500C0A1D4 /* SAUnboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596493AB1F6EC23500C0A1D4 /* SAUnboxViewController.m */; };
 		596493AE1F6EC23500C0A1D4 /* SAUnboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596493AC1F6EC23500C0A1D4 /* SAUnboxViewController.xib */; };
@@ -84,6 +85,7 @@
 		5950AD371FAD71AE006DE87C /* VPLocationConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPLocationConverter.h; sourceTree = "<group>"; };
 		5950AD391FAD71BB006DE87C /* VPAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPAnnotation.h; sourceTree = "<group>"; };
 		5950AD3A1FAD71BB006DE87C /* VPAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPAnnotation.m; sourceTree = "<group>"; };
+		5962F685207F8C9300E615D0 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		596493A71F6EBFE700C0A1D4 /* TPBGTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBGTask.h; sourceTree = "<group>"; };
 		596493A81F6EBFE700C0A1D4 /* TPBGTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPBGTask.m; sourceTree = "<group>"; };
 		596493AA1F6EC23500C0A1D4 /* SAUnboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAUnboxViewController.h; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		5906A9211F6AB81A004C574F /* SAMSARAFEATURES */ = {
 			isa = PBXGroup;
 			children = (
+				5962F684207F8C6400E615D0 /* SANameInfoStrings */,
 				59EE26D71F7018FF00B75FDD /* SATools */,
 				59EE26C01F7017D100B75FDD /* SAStoreManager */,
 				5906A9501F6ABE84004C574F /* SAContant */,
@@ -285,6 +288,14 @@
 				5906A9561F6AC486004C574F /* SAConstantString.m */,
 			);
 			path = SAContant;
+			sourceTree = "<group>";
+		};
+		5962F684207F8C6400E615D0 /* SANameInfoStrings */ = {
+			isa = PBXGroup;
+			children = (
+				5962F685207F8C9300E615D0 /* InfoPlist.strings */,
+			);
+			path = SANameInfoStrings;
 			sourceTree = "<group>";
 		};
 		596493A61F6EBFE700C0A1D4 /* SABGTask */ = {
@@ -430,7 +441,7 @@
 				TargetAttributes = {
 					5906A91E1F6AB81A004C574F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4E8S34J8UT;
+						DevelopmentTeam = JN7JU5LSHZ;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -464,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				674713011FAB3B8600521944 /* SAHistoryController.xib in Resources */,
+				5962F686207F8C9300E615D0 /* InfoPlist.strings in Resources */,
 				59EE26D61F70186200B75FDD /* Info.plist in Resources */,
 				5906A9431F6AB9A6004C574F /* SARootViewController.xib in Resources */,
 				5906A9321F6AB81A004C574F /* LaunchScreen.storyboard in Resources */,
@@ -691,13 +703,13 @@
 			baseConfigurationReference = 35B8B126347AC2DE1BB2975C /* Pods-SAMSARAFEATURES.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4E8S34J8UT;
+				DEVELOPMENT_TEAM = JN7JU5LSHZ;
 				GCC_PREFIX_HEADER = SAMSARAFEATURES/PrefixHeader.pch;
 				INFOPLIST_FILE = SAMSARAFEATURES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = samsara.com.SAMSARAFEATURES2;
+				PRODUCT_BUNDLE_IDENTIFIER = samsara.com.SAMSARAFEATURES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -708,13 +720,13 @@
 			baseConfigurationReference = 2730F0CBB88114F12A799BE6 /* Pods-SAMSARAFEATURES.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4E8S34J8UT;
+				DEVELOPMENT_TEAM = JN7JU5LSHZ;
 				GCC_PREFIX_HEADER = SAMSARAFEATURES/PrefixHeader.pch;
 				INFOPLIST_FILE = SAMSARAFEATURES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = samsara.com.SAMSARAFEATURES2;
+				PRODUCT_BUNDLE_IDENTIFIER = samsara.com.SAMSARAFEATURES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

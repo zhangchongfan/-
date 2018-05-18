@@ -65,7 +65,7 @@ typedef void(^DeviceConnectBlock)(DeviceConnectState connectState);
 
 //连接状态,发送指令前确保连接
 @property (nonatomic, assign) BOOL isConnected;
-
+@property (nonatomic, assign) BOOL canReadRSSI;
 
 /**
  是否自动连接，默认是YES

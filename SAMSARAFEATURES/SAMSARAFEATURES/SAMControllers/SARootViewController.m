@@ -325,6 +325,12 @@ static NSString *const DeviceCellID = @"DeviceCellID";
 }
 
 - (void)receiveRSSIValue:(NSNotification *)noti {
+    if (!AppBleManager.isConnected) {
+        return;
+    }
+    if (!AppBleManager.canReadRSSI) {
+        return;
+    }
     NSNumber *rssiValue = noti.object;
     NSLog(@"rssiValue:%@",rssiValue);
     if ([rssiValue integerValue] <= AppBleManager.peripheralModel.rssiAlarmValue) {
@@ -430,7 +436,7 @@ static NSString *const DeviceCellID = @"DeviceCellID";
     if (indexPath.row == 2) {
         [self enterHistoryController];
     }else if (indexPath.row == 3) {//客户界面
-        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://www.samsaraluggage.com/"]];
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://www.samsaraluggage.com/smart-unit/"]];
     }
 }
 
@@ -482,7 +488,11 @@ static NSString *const DeviceCellID = @"DeviceCellID";
         return;
     }
     outOfRange = YES;
-    [LocalNotiFile registImmediatelyNoticeWithContent:[NSString stringWithFormat:@"Samsara suitcase out of range"]];
+    if (AppBleManager.peripheralModel != nil) {
+        if (AppBleManager.peripheralModel.lostAlarmType) {
+            [LocalNotiFile registImmediatelyNoticeWithContent:[NSString stringWithFormat:@"Samsara out of range"]];
+        }
+    }
     NSString *currentTime = [DateHandle getYearMonthDayHourMinuteSecondTime];
     SAOpenRecordModel *lostModel = [[SAOpenRecordModel alloc]initWithSaveTime:currentTime];
     [[DBStoreManager shareStoreManager]putObject:[lostModel changeLostDict] DeviceAddress:[[NSUserDefaults standardUserDefaults]objectForKey:DeviceMacKey] withTime:lostModel.saveTime intoTable:OpenBox_table withDataVession:@"0"];
@@ -493,13 +503,12 @@ static NSString *const DeviceCellID = @"DeviceCellID";
     }];
 }
 
-
 //断开后箱子有打开的信息
 - (void)openWhenYouWereAway {
     if (openAlarm) {
         return;
     }
-    [LocalNotiFile registImmediatelyNoticeWithContent:@"Your suitcase opened while you were away, Open \"Log History\" for details."];
+    [LocalNotiFile registImmediatelyNoticeWithContent:@"Samsara opened while you were away, open \"log history\" for details."];
     openAlarm = YES;
 }
 

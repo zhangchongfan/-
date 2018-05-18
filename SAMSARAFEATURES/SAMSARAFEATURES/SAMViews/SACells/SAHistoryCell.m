@@ -20,7 +20,7 @@
     _recordModel = recordModel;
     if (recordModel.type == 0) {//开
         self.locationBtn.hidden = YES;
-        self.topLabel.text = @"Suitcase opened";
+        self.topLabel.text = @"Samsara opened:";
         //时间
         NSString *timeDes = @"";
         NSInteger agoSecond = [recordModel beforeCurrentTimeSecond];//距离现在有多少秒

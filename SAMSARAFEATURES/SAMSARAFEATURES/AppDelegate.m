@@ -4,7 +4,8 @@
 //
 //  Created by 张冲 on 2017/9/14.
 //  Copyright © 2017年 samsara. All rights reserved.
-//
+//  denis.wang@lplustechnology.com Omridzi55
+//  Wang JiaWei
 
 #import "AppDelegate.h"
 #import "SARootViewController.h"
