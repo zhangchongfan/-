@@ -44,6 +44,13 @@ static NSString *const DeviceCellID = @"DeviceCellID";
 
 @implementation SARootViewController
 
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    
+//    openAlarm = NO;
+//    [[NSNotificationCenter defaultCenter]postNotificationName:@"SABOXOPEN" object:nil];
+//    
+//}
+
 - (NSMutableArray *)deviceArray {
     if (!_deviceArray) {
         _deviceArray = [NSMutableArray array];
@@ -490,7 +497,7 @@ static NSString *const DeviceCellID = @"DeviceCellID";
     outOfRange = YES;
     if (AppBleManager.peripheralModel != nil) {
         if (AppBleManager.peripheralModel.lostAlarmType) {
-            [LocalNotiFile registImmediatelyNoticeWithContent:[NSString stringWithFormat:@"Samsara out of range"]];
+            [LocalNotiFile registImmediatelyNoticeWithContent:@"Samsara out of range"];
         }
     }
     NSString *currentTime = [DateHandle getYearMonthDayHourMinuteSecondTime];

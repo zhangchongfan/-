@@ -47,6 +47,7 @@ static VPBleCentralManage *bleCentralManage = nil;
         self.peripheralManage = [VPPeripheralManage shareVPPeripheralManager];
         self.automaticConnection = YES;
         self.rssiTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReadRSSI) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop]addTimer:self.rssiTimer forMode:NSRunLoopCommonModes];
     }
     return self;
 }
@@ -57,8 +58,9 @@ static VPBleCentralManage *bleCentralManage = nil;
 }
 
 - (void)startReadRSSI {//连接后延迟3秒读取RSSI
+    NSLog(@".....");
     if (self.isConnected && self.canReadRSSI) {
-        [self.peripheralModel.peripheral readRSSI];
+        [self.peripheralManage readDeviceRSSI];
     }
 }
 

@@ -6,6 +6,7 @@
 //  Copyright © 2017年 samsara. All rights reserved.
 //  denis.wang@lplustechnology.com Omridzi55
 //  Wang JiaWei
+//  App store: samsara.com.SAMSARAFEATURES
 
 #import "AppDelegate.h"
 #import "SARootViewController.h"

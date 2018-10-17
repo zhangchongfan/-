@@ -441,7 +441,7 @@
 				TargetAttributes = {
 					5906A91E1F6AB81A004C574F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = JN7JU5LSHZ;
+						DevelopmentTeam = 4E8S34J8UT;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -703,13 +703,13 @@
 			baseConfigurationReference = 35B8B126347AC2DE1BB2975C /* Pods-SAMSARAFEATURES.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JN7JU5LSHZ;
+				DEVELOPMENT_TEAM = 4E8S34J8UT;
 				GCC_PREFIX_HEADER = SAMSARAFEATURES/PrefixHeader.pch;
 				INFOPLIST_FILE = SAMSARAFEATURES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = samsara.com.SAMSARAFEATURES;
+				PRODUCT_BUNDLE_IDENTIFIER = samsara.com.SAMSARAFEATURES2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -720,13 +720,13 @@
 			baseConfigurationReference = 2730F0CBB88114F12A799BE6 /* Pods-SAMSARAFEATURES.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JN7JU5LSHZ;
+				DEVELOPMENT_TEAM = 4E8S34J8UT;
 				GCC_PREFIX_HEADER = SAMSARAFEATURES/PrefixHeader.pch;
 				INFOPLIST_FILE = SAMSARAFEATURES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = samsara.com.SAMSARAFEATURES;
+				PRODUCT_BUNDLE_IDENTIFIER = samsara.com.SAMSARAFEATURES2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

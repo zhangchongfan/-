@@ -75,7 +75,7 @@ static VPPeripheralManage *peripheralManage = nil;
 }
 
 - (void)readDeviceRSSI {
-    Byte byte[20] = {0xA5,0x02,0x02};
+    Byte byte[20] = {0xA5,0x02};
     NSData *commandData = [NSData dataWithBytes:&byte length:sizeof(byte)];
     [VPBleHelper setNotificationForCharacteristic:self.peripheralModel.peripheral sUUID:Ble_Main_Service cUUID:Ble_Main_Con enable:YES];
     [VPBleHelper writeCharacteristic:self.peripheralModel.peripheral sUUID:Ble_Main_Service cUUID:Ble_Main_Con data:commandData];
@@ -127,15 +127,7 @@ static VPPeripheralManage *peripheralManage = nil;
         [[NSNotificationCenter defaultCenter]postNotificationName:RSSINoti object:@(0 - a)];
     }
 }
-
-- (void)peripheral:(CBPeripheral *)peripheral didReadRSSI:(NSNumber *)RSSI error:(NSError *)error {//获取设备的RSSI
-//    NSLog(@"RSSI:%@",RSSI);
-//    [[NSNotificationCenter defaultCenter]postNotificationName:RSSINoti object:RSSI];
-    [self readDeviceRSSI];
-}
  
-
-
 @end
 
 

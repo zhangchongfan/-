@@ -25,7 +25,8 @@
 typedef enum : NSInteger {
     EBBannerViewStyleiOS9 = 9,
     EBBannerViewStyleiOS10 = 10,
-    EBBannerViewStyleiOS11 = 11
+    EBBannerViewStyleiOS11 = 11,
+    EBBannerViewStyleiOS12 = 12
 } EBBannerViewStyle;
 
 @interface EBBannerViewMaker : NSObject

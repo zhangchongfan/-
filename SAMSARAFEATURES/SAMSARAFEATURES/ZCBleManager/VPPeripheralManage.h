@@ -31,6 +31,8 @@
 
 - (void)readDeviceBatteryLevel:(void(^)(NSInteger batteryLevel))batteryBlock;
 
+- (void)readDeviceRSSI;
+
 - (void)readDeviceOpenHistory;
 
 @end

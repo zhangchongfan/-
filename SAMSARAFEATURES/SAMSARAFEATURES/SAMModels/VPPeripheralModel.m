@@ -46,9 +46,9 @@
 
 - (NSInteger)rssiAlarmValue {
     if ([[NSUserDefaults standardUserDefaults]objectForKey:DistantRangeStateKey] == 0) {//短距离
-        return -72;
+        return -70;
     }else {//长距离
-        return -85;
+        return -80;
     }
 }
 
